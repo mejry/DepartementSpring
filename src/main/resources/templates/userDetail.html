@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>User Detail</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+  <h1>User Detail</h1>
+  <p><strong>ID:</strong> <span th:text="${user.id}">1</span></p>
+  <p><strong>Name:</strong> <span th:text="${user.name}">John</span></p>
+  <p><strong>Prename:</strong> <span th:text="${user.prename}">Doe</span></p>
+  <p><strong>Email:</strong> <span th:text="${user.email}">john.doe@example.com</span></p>
+  <a href="/admin/users">Back to User List</a>
+</div>
+</body>
+</html>

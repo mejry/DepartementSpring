@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Absence Detail</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+  <h1>Absence Detail</h1>
+  <p><strong>ID:</strong> <span th:text="${absence.id}"></span></p>
+  <p><strong>Date:</strong> <span th:text="${absence.date}"></span></p>
+  <p><strong>Heure Debut:</strong> <span th:text="${absence.heureDebut}"></span></p>
+  <p><strong>Heure Fin:</strong> <span th:text="${absence.heureFin}"></span></p>
+  <a href="/teacher/allabsences">Back to Absence List</a>
+</div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Cours</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Add Cours</h1>
+    <form action="#" th:action="@{/teacher/addcours}" th:object="${cours}" method="post">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" th:field="*{name}" required />
+        </div>
+        <div>
+            <label for="duree">Duree:</label>
+            <input type="text" id="duree" th:field="*{duree}" required />
+        </div>
+        <button type="submit">Add Cours</button>
+    </form>
+    <a href="/teacher/allcours">Back to Cours List</a>
+</div>
+</body>
+</html>

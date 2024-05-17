@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Absence</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Add Absence</h1>
+    <form action="#" th:action="@{/teacher/addabsence}" th:object="${absence}" method="post">
+        <div>
+            <label for="studentId">Student ID:</label>
+            <input type="text" id="studentId" name="studentId" required />
+        </div>
+        <div>
+            <label for="courseId">Course ID:</label>
+            <input type="text" id="courseId" name="courseId" required />
+        </div>
+        <div>
+            <label for="date">Date:</label>
+            <input type="date" id="date" th:field="*{date}" required />
+        </div>
+        <div>
+            <label for="heureDebut">Heure Debut:</label>
+            <input type="time" id="heureDebut" th:field="*{heure_debut}" required />
+        </div>
+        <div>
+            <label for="heureFin">Heure Fin:</label>
+            <input type="time" id="heureFin" th:field="*{heure_fin}" required />
+        </div>
+        <button type="submit">Add Absence</button>
+    </form>
+    <a href="/teacher/allabsences">Back to Absence List</a>
+</div>
+</body>
+</html>

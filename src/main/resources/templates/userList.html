@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>User List</title>
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+  <!-- Add Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<div class="container">
+  <h1>User List</h1>
+  <table>
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="user : ${users}">
+      <td th:text="${user.id}"></td>
+      <td th:text="${user.name}"></td>
+      <td th:text="${user.email}"></td>
+      <td>
+        <!-- View Button -->
+        <a th:href="@{/admin/user/{id}(id=${user.id})}" class="btn btn-view"><i class="fas fa-eye"></i> View</a>
+        <!-- Update Button -->
+        <a th:href="@{/admin/update/{id}(id=${user.id})}" class="btn btn-update"><i class="fas fa-edit"></i> Update</a>
+        <!-- Delete Button -->
+        <a th:href="@{/admin/delete/{id}(id=${user.id})}" class="btn btn-delete" onclick="return confirm('Are you sure?')"><i class="fas fa-trash-alt"></i> Delete</a>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <!-- Add New User Button -->
+  <a href="/admin/createStudent" class="btn btn-add"><i class="fas fa-plus-circle"></i> Add New Student</a>
+  <a href="/admin/createTeacher" class="btn btn-add"><i class="fas fa-plus-circle"></i> Add New Teacher</a>
+</div>
+</body>
+</html>
